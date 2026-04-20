@@ -1,11 +1,12 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
   title: "울쎄라 프라임 | DK서울의원",
-  description: "DK서울의원 울쎄라 프라임 - 초음파 에너지로 SMAS층까지 강력하게 리프팅하는 FDA 승인 시술",
+  description: "DK서울의원 울쎄라 프라임 - 초음파 에너지로 SMAS층까지 접근하는 리프팅 장비 안내",
 };
 
 const energyLiftingMenu = menuData.find((m) => m.href === "/energy-lifting")!;
@@ -17,7 +18,7 @@ export default function UltheraPage() {
       categoryHref="/energy-lifting"
       title="울쎄라 프라임"
       subtitle="Ulthera Prime"
-      description="초음파 에너지를 피부 심층(SMAS층)까지 전달하여 강력한 리프팅 효과를 제공하는 FDA 승인 프리미엄 리프팅 시술입니다."
+      description="초음파 에너지를 피부 심층(SMAS층)까지 전달해 리프팅 방향을 설계하는 프리미엄 리프팅 시술입니다."
       sideMenu={energyLiftingMenu.subItems}
       currentPath="/energy-lifting/ulthera"
     >
@@ -27,9 +28,12 @@ export default function UltheraPage() {
         subtitle="울쎄라 프라임은 미국 Merz사의 고밀도 집속 초음파(HIFU) 기술을 활용하여, 피부 깊은 층(SMAS층)까지 에너지를 전달하는 비수술 리프팅 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        울쎄라 프라임 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/ulthera/device.webp"
+        alt="울쎄라 프라임 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle

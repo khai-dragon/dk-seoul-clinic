@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
@@ -5,7 +6,7 @@ import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
   title: "첨단재생의료실시기관 | DK서울의원",
-  description: "DK서울의원 첨단재생의료실시기관 지정 - 검증된 재생의료 서비스 제공",
+  description: "DK서울의원 재생의료 운영 기준과 연구 인프라 안내",
 };
 
 const stemCellMenu = menuData.find((m) => m.href === "/stem-cell")!;
@@ -17,52 +18,67 @@ export default function AdvancedRegenerativePage() {
       categoryHref="/stem-cell"
       title="첨단재생의료실시기관"
       subtitle="Advanced Regenerative Medicine"
-      description="DK서울의원은 첨단재생의료실시기관으로서, 국가가 인정한 안전하고 체계적인 재생의료 서비스를 제공합니다."
+      description="재생의료 시스템, 시설 기준, 준비 현황을 중심으로 DK서울의원의 첨단재생의료 운영 방향을 안내합니다."
       sideMenu={stemCellMenu.subItems}
       currentPath="/stem-cell/advanced-regenerative"
     >
-      {/* 지정서 이미지 영역 */}
+      {/* 재생의료 운영 인프라 소개 */}
       <SectionTitle
-        title="첨단재생의료실시기관 지정"
-        subtitle="DK서울의원은 보건복지부로부터 첨단재생의료실시기관으로 지정받았습니다."
+        title="재생의료 운영 기준 안내"
+        subtitle="현재는 연구 인프라와 운영 방향을 중심으로 안내하며, 공식 지정 또는 인증 자료는 확인 후 별도 고지될 수 있습니다."
       />
 
-      <div className="w-full h-96 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-6">
-        첨단재생의료실시기관 지정서 이미지 영역 (추후 지정 후 삽입)
+      <div className="relative w-full h-96 bg-section-bg rounded-2xl overflow-hidden mb-6 border border-border-color">
+        <Image
+          src="/content/stem-cell/research-lab/banking-room.png"
+          alt="재생의료 시스템 준비 비주얼"
+          fill
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/15 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-8 sm:p-10 text-white">
+          <p className="text-[11px] tracking-[0.16em] uppercase text-accent-light/90 mb-3">Document Update Ready</p>
+          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">재생의료 운영 인프라 소개</h3>
+          <p className="text-sm text-white/75 max-w-2xl leading-relaxed">
+            현재는 연구 환경과 운영 기준을 중심으로 먼저 안내하고 있으며, 공식 문서가 확인되는 경우 별도 안내 섹션으로 확장할 수 있도록 구성했습니다.
+          </p>
+        </div>
       </div>
       <p className="text-sm text-text-muted leading-relaxed mb-16">
-        첨단재생의료실시기관 지정서는 보건복지부 산하 기관의 엄격한 심사를 통과한 의료기관에만 부여됩니다. 해당 지정을 받기 위해서는 시설, 인력, 장비, 품질 관리 시스템 등 다양한 요건을 충족해야 합니다.
+        재생의료 관련 운영은 시설, 인력, 장비, 운영 체계 등 다양한 요건을 바탕으로 검토되는 영역입니다.
+        본 페이지는 그 기준에 맞춰 준비된 연구 환경과 재생의료 운영 방향을 중심으로 먼저 안내하고 있습니다.
       </p>
 
-      {/* 지정의 의미 */}
+      {/* 운영 기준의 의미 */}
       <SectionTitle
-        title="첨단재생의료실시기관 지정이 가지는 의미"
-        subtitle="첨단재생의료실시기관 지정은 의료기관의 재생의료 역량을 국가 차원에서 검증한 것입니다."
+        title="재생의료 운영 기준이 중요한 이유"
+        subtitle="재생의료는 시설, 인력, 장비, 품질 관리 체계가 함께 갖춰져야 보다 신뢰도 높은 진료 환경으로 이어질 수 있습니다."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
         <InfoCard
-          title="국가 공인 안전성 검증"
-          description="보건복지부의 엄격한 심사를 통해 시설, 인력, 장비의 안전성과 적합성이 공식적으로 인정된 의료기관입니다."
+          title="안전성 검토 기준"
+          description="시설, 인력, 장비의 적합성은 재생의료 진료 환경을 평가할 때 핵심적으로 확인되는 요소입니다."
         />
         <InfoCard
           title="체계적 품질 관리 시스템"
-          description="세포 치료제의 제조부터 투여까지 전 과정에 걸친 품질 관리 시스템을 구축하고 운영하고 있음을 의미합니다."
+          description="세포 준비부터 보관, 적용까지 전 과정의 품질 관리 체계는 재생의료 운영의 기본이 됩니다."
         />
         <InfoCard
           title="전문 인력 확보"
-          description="재생의료 분야의 전문 의료진과 연구 인력을 갖추고 있어, 전문적이고 안전한 치료를 제공할 수 있습니다."
+          description="재생의료 분야에서는 전문 의료진과 연구 인력의 협업 구조가 진료 완성도에 큰 영향을 줍니다."
         />
         <InfoCard
           title="최첨단 시설 및 장비"
-          description="GMP 수준의 세포 처리 시설과 최첨단 연구 장비를 보유하여 높은 품질의 세포 치료를 수행할 수 있습니다."
+          description="세포 처리 시설과 연구 장비 수준은 재생의료 관련 진료와 연구 흐름을 안정적으로 뒷받침합니다."
         />
       </div>
 
-      {/* 환자에게 주는 의미 */}
+      {/* 환자 관점의 확인 포인트 */}
       <SectionTitle
-        title="환자에게 주는 의미"
-        subtitle="첨단재생의료실시기관 지정은 환자분들에게 다음과 같은 가치를 제공합니다."
+        title="환자 상담 시 확인할 포인트"
+        subtitle="재생의료 관련 상담에서는 아래 요소를 함께 확인하면 현재 시스템을 보다 입체적으로 이해하는 데 도움이 됩니다."
       />
 
       <div className="bg-card-bg rounded-2xl border border-border-color p-8 mb-16">
@@ -70,29 +86,29 @@ export default function AdvancedRegenerativePage() {
           <div className="flex gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold shrink-0">01</div>
             <div>
-              <h3 className="font-bold text-foreground mb-1">검증된 안전한 치료</h3>
-              <p className="text-sm text-text-muted">국가가 인정한 시설에서 엄격한 기준에 따라 시행되는 재생의료 치료를 받으실 수 있습니다.</p>
+              <h3 className="font-bold text-foreground mb-1">운영 기준의 투명성</h3>
+              <p className="text-sm text-text-muted">시설과 장비, 운영 체계가 어떤 기준으로 구성되어 있는지 확인하는 것이 중요합니다.</p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold shrink-0">02</div>
             <div>
-              <h3 className="font-bold text-foreground mb-1">높은 치료 품질 보장</h3>
-              <p className="text-sm text-text-muted">체계적인 품질 관리 시스템을 통해 일관되고 높은 수준의 치료 품질을 경험하실 수 있습니다.</p>
+              <h3 className="font-bold text-foreground mb-1">품질 관리 체계</h3>
+              <p className="text-sm text-text-muted">세포 준비와 보관, 적용 과정이 어떤 방식으로 관리되는지 상담 시 확인할 수 있습니다.</p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold shrink-0">03</div>
             <div>
-              <h3 className="font-bold text-foreground mb-1">전문 의료진의 치료</h3>
-              <p className="text-sm text-text-muted">재생의료 분야에 전문성을 갖춘 의료진이 직접 상담부터 치료까지 담당합니다.</p>
+              <h3 className="font-bold text-foreground mb-1">의료진과 연구 인력의 협업</h3>
+              <p className="text-sm text-text-muted">의료진 상담과 연구 인프라가 어떻게 연결되는지 확인하면 진료 흐름을 이해하기 쉽습니다.</p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold shrink-0">04</div>
             <div>
-              <h3 className="font-bold text-foreground mb-1">첨단 치료 접근성</h3>
-              <p className="text-sm text-text-muted">최신 재생의료 기술과 치료법에 빠르게 접근할 수 있어, 보다 효과적인 치료를 받으실 수 있습니다.</p>
+              <h3 className="font-bold text-foreground mb-1">연구 기반 진료 방향</h3>
+              <p className="text-sm text-text-muted">현재 연구 인프라와 진료 방향이 어떤 방식으로 연결되는지 살펴보는 것이 좋습니다.</p>
             </div>
           </div>
         </div>
@@ -101,21 +117,21 @@ export default function AdvancedRegenerativePage() {
       {/* DK서울의원의 차별점 */}
       <SectionTitle
         title="DK서울의원의 재생의료 차별점"
-        subtitle="DK서울의원은 첨단재생의료실시기관으로서 차별화된 가치를 제공합니다."
+        subtitle="DK서울의원은 재생의료 관련 연구 인프라와 진료 시스템을 바탕으로 차별화된 방향성을 구축하고 있습니다."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <InfoCard
           title="자체 줄기세포 연구소"
-          description="의원 내 자체 연구소에서 세포의 채취, 배양, 보관을 직접 수행하여 치료의 일관성과 안전성을 확보합니다."
+          description="의원 내 연구소를 통해 세포 채취, 배양, 보관 과정을 보다 일관된 흐름으로 관리합니다."
         />
         <InfoCard
           title="GMP 수준의 시설"
-          description="의약품 제조 품질 관리 기준에 준하는 시설을 갖추어 세포 치료의 안전성을 보장합니다."
+          description="품질 관리 기준을 고려한 시설 환경을 바탕으로 세포 관련 진료와 연구를 뒷받침합니다."
         />
         <InfoCard
           title="원스톱 치료 시스템"
-          description="상담, 검사, 세포 채취, 치료, 사후 관리까지 모든 과정을 원스톱으로 제공합니다."
+          description="상담, 검사, 세포 채취, 치료, 사후 관리까지 한 흐름으로 연결되는 시스템을 지향합니다."
         />
       </div>
     </SubPageLayout>

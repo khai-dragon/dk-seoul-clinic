@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -10,19 +11,68 @@ import HoverCard from "@/components/animations/HoverCard";
 import TreatmentAccordion from "@/components/animations/TreatmentAccordion";
 
 const heroServices = [
-  { name: "줄기세포", desc: "프리미엄 셀관리와 첨단재생의료", en: "Stem Cell", href: "/stem-cell" },
-  { name: "수액 테라피", desc: "맞춤형 프리미엄 수액 처방", en: "IV Therapy", href: "/iv-therapy" },
-  { name: "스킨 리모델링", desc: "피부 재생과 안티에이징 솔루션", en: "Skin Remodeling", href: "/skin-remodeling" },
-  { name: "에너지 리프팅", desc: "비수술 프리미엄 리프팅", en: "Energy Lifting", href: "/energy-lifting" },
-  { name: "다이어트", desc: "건강 회복 중심 맞춤 다이어트", en: "Diet Program", href: "/diet" },
-  { name: "웰니스", desc: "스트레스 · 피로 · 면역 케어", en: "Wellness", href: "/wellness" },
-  { name: "고압산소케어", desc: "세포 회복 산소 치료", en: "Hyperbaric Oxygen", href: "/hyperbaric-oxygen" },
+  {
+    name: "줄기세포",
+    desc: "프리미엄 셀관리와 첨단재생의료",
+    en: "Stem Cell",
+    href: "/stem-cell",
+    imageSrc: "/content/home/service-stem-cell.jpg",
+    imageAlt: "줄기세포 메인 비주얼",
+  },
+  {
+    name: "수액 테라피",
+    desc: "맞춤형 프리미엄 수액 처방",
+    en: "IV Therapy",
+    href: "/iv-therapy",
+    imageSrc: "/content/home/service-iv-therapy.jpg",
+    imageAlt: "수액 테라피 메인 비주얼",
+  },
+  {
+    name: "스킨 리모델링",
+    desc: "피부 재생과 안티에이징 솔루션",
+    en: "Skin Remodeling",
+    href: "/skin-remodeling",
+    imageSrc: "/content/home/service-skin-remodeling.jpg",
+    imageAlt: "스킨 리모델링 메인 비주얼",
+  },
+  {
+    name: "에너지 리프팅",
+    desc: "비수술 프리미엄 리프팅",
+    en: "Energy Lifting",
+    href: "/energy-lifting",
+    imageSrc: "/content/home/service-energy-lifting.webp",
+    imageAlt: "에너지 리프팅 장비 비주얼",
+  },
+  {
+    name: "다이어트",
+    desc: "건강 회복 중심 맞춤 다이어트",
+    en: "Diet Program",
+    href: "/diet",
+    imageSrc: "/content/home/service-diet.jpg",
+    imageAlt: "다이어트 프로그램 메인 비주얼",
+  },
+  {
+    name: "웰니스",
+    desc: "스트레스 · 피로 · 면역 케어",
+    en: "Wellness",
+    href: "/wellness",
+    imageSrc: "/content/home/service-wellness.jpg",
+    imageAlt: "웰니스 메인 비주얼",
+  },
+  {
+    name: "고압산소케어",
+    desc: "세포 회복 산소 치료",
+    en: "Hyperbaric Oxygen",
+    href: "/hyperbaric-oxygen",
+    imageSrc: "/content/home/service-hyperbaric.jpg",
+    imageAlt: "고압산소케어 장비 비주얼",
+  },
 ];
 
 const journeySteps = [
   { num: "01", title: "프리미엄 상담", desc: "가정의학과 전문의의 심층 1:1 상담을 통해 개인별 건강 상태와 목표를 정밀하게 파악합니다." },
   { num: "02", title: "정밀 진단", desc: "최첨단 장비를 활용한 체계적인 검사로 과학적 근거에 기반한 치료 방향을 설계합니다." },
-  { num: "03", title: "맞춤 시술", desc: "정품·정량 원칙 하에 검증된 시술법으로 최적의 결과를 만들어 드립니다." },
+  { num: "03", title: "맞춤 시술", desc: "정품·정량 원칙을 바탕으로 현재 상태와 목표에 맞는 시술 구성을 제안합니다." },
   { num: "04", title: "사후 관리", desc: "시술 후에도 지속적인 관리와 상담으로 아름다움이 오래 유지되도록 함께합니다." },
 ];
 
@@ -126,9 +176,19 @@ function HeroSection() {
               className="hidden lg:block relative"
             >
               <div className="relative">
-                <div className="w-full aspect-[3/4] bg-white/[0.03] border border-white/[0.06] overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-accent/5 to-transparent flex items-end p-10">
-                    <span className="text-white/40 text-[12px] tracking-[0.15em] uppercase">Clinic Interior</span>
+                <div className="relative w-full aspect-[3/4] bg-white/[0.03] border border-white/[0.06] overflow-hidden">
+                  <Image
+                    src="/content/home/hero-thermage.jpg"
+                    alt="DK서울의원 대표 장비 비주얼"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 38vw, 100vw"
+                    className="object-contain object-center scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-primary/70" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
+                  <div className="w-full h-full flex items-end p-10 relative">
+                    <span className="text-white/45 text-[12px] tracking-[0.15em] uppercase">Featured Device</span>
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-accent/20" />
@@ -184,6 +244,14 @@ export default function Home() {
             {heroServices.slice(0, 2).map((service, i) => (
               <ScrollReveal key={service.name} delay={i * 0.1} className="h-full">
                 <HoverCard href={service.href} className="group block bg-primary text-white p-8 sm:p-14 relative overflow-hidden min-h-[280px] sm:min-h-[320px] flex flex-col justify-end h-full">
+                  <Image
+                    src={service.imageSrc}
+                    alt={service.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 48vw, 100vw"
+                    className="object-cover opacity-25 group-hover:opacity-35 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/90 to-primary/55" />
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute top-8 right-8">
                     <span className="font-serif text-7xl italic text-white/[0.04]">{service.en}</span>
@@ -208,9 +276,19 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-border-color/40 items-stretch">
             {heroServices.slice(2).map((service, i) => (
               <ScrollReveal key={service.name} delay={i * 0.08} className="h-full">
-                <HoverCard href={service.href} className="group block bg-card-bg p-7 sm:p-8 min-h-[220px] flex flex-col justify-between h-full">
-                  <p className="font-serif text-accent/70 text-[13px] italic tracking-wide">{service.en}</p>
-                  <div>
+                <HoverCard href={service.href} className="group block bg-card-bg p-7 sm:p-8 min-h-[220px] flex flex-col justify-between h-full relative overflow-hidden">
+                  <div className="absolute inset-0">
+                    <Image
+                      src={service.imageSrc}
+                      alt={service.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover opacity-[0.14] group-hover:opacity-[0.2] transition-opacity duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-background/25 via-card-bg/85 to-card-bg" />
+                  </div>
+                  <p className="relative font-serif text-accent/70 text-[13px] italic tracking-wide">{service.en}</p>
+                  <div className="relative">
                     <h3 className="text-[16px] font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300 tracking-tight">
                       {service.name}
                     </h3>
@@ -225,7 +303,12 @@ export default function Home() {
 
       {/* Parallax Image Break */}
       <section className="relative h-[45vh] overflow-hidden">
-        <ParallaxImage className="w-full h-full" label="DK Seoul Clinic Interior" />
+        <ParallaxImage
+          className="w-full h-full"
+          label="DK Oxygen Solution"
+          src="/content/home/parallax-oxygen.jpg"
+          alt="DK서울의원 산소치료 솔루션 비주얼"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-10 sm:p-16">
           <ScrollReveal>
@@ -258,9 +341,9 @@ export default function Home() {
             <div className="lg:col-span-7">
               <div className="space-y-0 border-t border-border-color">
                 {[
-                  { num: "01", title: "자체 줄기세포 연구소", desc: "세포 연구실과 뱅킹 연구실을 갖춘 자체 연구소에서 최첨단 줄기세포 치료를 직접 연구하고 제공합니다. GMP 수준의 시설을 통해 안전성과 효과를 보장합니다." },
+                  { num: "01", title: "자체 줄기세포 연구소", desc: "세포 연구실과 뱅킹 연구실을 갖춘 자체 연구소에서 줄기세포 관련 연구와 진료 인프라를 운영합니다. GMP 수준을 고려한 시설 환경으로 일관된 세포 관리 체계를 구축하고 있습니다." },
                   { num: "02", title: "전문의 심층 상담", desc: "비만 전문 인증의이자 국제 생활습관의학 전문의의 1:1 맞춤 상담으로 정확한 진단과 최적의 처방을 설계합니다." },
-                  { num: "03", title: "정품 · 정량 · 정직", desc: "써마지 마스터 보유 병원으로서, 모든 시술에 정품·정량 원칙을 철저히 준수합니다. 신뢰할 수 있는 결과를 약속합니다." },
+                  { num: "03", title: "정품 · 정량 · 정직", desc: "정품·정량 원칙을 바탕으로 각 시술의 기준과 사용 계획을 투명하게 안내합니다." },
                   { num: "04", title: "프리미엄 VIP 공간", desc: "힐링과 케어를 위해 설계된 프리미엄 라운지에서, 시술의 시작부터 끝까지 편안하고 특별한 경험을 선사합니다." },
                 ].map((item, i) => (
                   <ScrollReveal key={item.num} delay={i * 0.08}>

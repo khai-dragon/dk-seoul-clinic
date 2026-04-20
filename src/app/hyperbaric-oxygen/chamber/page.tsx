@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function HyperbaricOxygenChamberPage() {
       categoryHref="/hyperbaric-oxygen"
       title="DK 고압산소챔버"
       subtitle="DK Hyperbaric Oxygen Chamber"
-      description="검증된 장비와 환자 중심의 편안한 환경으로, 안전하고 효과적인 고압산소치료를 제공합니다."
+      description="장비 사양과 치료 환경을 바탕으로, 환자 상태에 맞는 고압산소치료 계획을 안내합니다."
       sideMenu={oxygenMenu.subItems}
       currentPath="/hyperbaric-oxygen/chamber"
     >
@@ -30,7 +31,7 @@ export default function HyperbaricOxygenChamberPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
         <InfoCard
           title="검증된 장비"
-          description="의료기기 인증을 받은 전문 고압산소챔버를 사용하여 안전성과 치료 효과를 보장합니다."
+          description="의료기기 기준에 맞는 장비 사양을 바탕으로 치료 환경을 구성하고, 진료 전 적합성을 함께 확인합니다."
         />
         <InfoCard
           title="정밀 진단 기반"
@@ -52,22 +53,33 @@ export default function HyperbaricOxygenChamberPage() {
         subtitle="DK서울의원이 도입한 아이벡스 IBEX Light3는 최첨단 1인용 고압산소챔버입니다."
       />
 
-      <div className="w-full h-80 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-10">
-        아이벡스 IBEX Light3 장비 이미지 영역
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        <ContentImageFrame
+          src="/content/hyperbaric-oxygen/chamber/exterior.jpg"
+          alt="아이벡스 IBEX Light3 챔버 외부 비주얼"
+          className="w-full h-80"
+          overlay
+        />
+        <ContentImageFrame
+          src="/content/hyperbaric-oxygen/chamber/interior.webp"
+          alt="아이벡스 IBEX Light3 챔버 내부 비주얼"
+          className="w-full h-80"
+          fit="contain"
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
         <InfoCard
           title="최대 3기압"
-          description="최대 3기압까지 가압 가능하여 높은 치료 효과를 기대할 수 있습니다."
+          description="장비 사양상 최대 3기압까지 운용 가능한 구성이며, 실제 적용 압력은 상태와 목적에 따라 달라질 수 있습니다."
         />
         <InfoCard
           title="1인용 전용 챔버"
-          description="1인용 전용 챔버로 개인 프라이버시를 보장하며 맞춤형 치료가 가능합니다."
+          description="1인용 전용 챔버 환경으로 보다 안정적인 치료 동선을 구성하고, 개별 상태에 맞춘 진행이 가능합니다."
         />
         <InfoCard
           title="투명 슬라이딩 도어"
-          description="투명한 슬라이딩 도어로 개방감을 제공하여 폐쇄 공포증 걱정 없이 편안하게 치료받을 수 있습니다."
+          description="투명한 슬라이딩 도어 구조로 내부 상태를 확인하기 쉽고, 개방감을 고려한 치료 환경을 제공합니다."
         />
         <InfoCard
           title="인터폰 통신"

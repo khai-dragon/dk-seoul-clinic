@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { menuData } from "@/lib/menu-data";
@@ -130,10 +131,29 @@ export default function TreatmentAccordion() {
                                 href={sub.href}
                                 className="block group/item p-4 bg-section-bg/60 hover:bg-primary transition-colors duration-500"
                               >
-                                <div className="w-full h-20 bg-border-color/30 group-hover/item:bg-white/10 mb-3 transition-colors duration-500 flex items-center justify-center">
-                                  <span className="text-[10px] tracking-[0.12em] text-text-muted/40 group-hover/item:text-white/30 uppercase transition-colors duration-500">
-                                    Image
-                                  </span>
+                                <div className="relative w-full h-20 overflow-hidden bg-border-color/20 mb-3 transition-colors duration-500">
+                                  {sub.imageSrc ? (
+                                    <>
+                                      <Image
+                                        src={sub.imageSrc}
+                                        alt={sub.name}
+                                        fill
+                                        sizes="(min-width: 1280px) 14vw, (min-width: 640px) 22vw, 44vw"
+                                        className={`transition-transform duration-700 group-hover/item:scale-105 ${
+                                          sub.imageFit === "contain"
+                                            ? "object-contain p-3"
+                                            : "object-cover"
+                                        }`}
+                                      />
+                                      <div className="absolute inset-0 bg-gradient-to-t from-primary/18 via-transparent to-transparent group-hover/item:from-primary/35 transition-colors duration-500" />
+                                    </>
+                                  ) : (
+                                    <div className="flex h-full items-center justify-center">
+                                      <span className="text-[10px] tracking-[0.12em] text-text-muted/40 group-hover/item:text-white/30 uppercase transition-colors duration-500">
+                                        Image
+                                      </span>
+                                    </div>
+                                  )}
                                 </div>
                                 <h4 className="text-[13px] font-medium text-foreground group-hover/item:text-white transition-colors duration-500 tracking-tight">
                                   {sub.name}

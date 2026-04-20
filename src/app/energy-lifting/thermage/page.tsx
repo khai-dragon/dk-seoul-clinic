@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function ThermagePage() {
         subtitle="써마지 FLX는 미국 Solta Medical사에서 개발한 4세대 써마지로, 고주파(RF) 에너지를 피부 깊숙이 전달하여 콜라겐을 수축하고 재생시키는 비침습적 리프팅 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        써마지 FLX 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/thermage/device.jpg"
+        alt="써마지 FLX 장비 비주얼"
+        className="w-full h-72 mb-16"
+        overlay
+      />
 
       {/* 시술 원리 */}
       <SectionTitle
@@ -71,23 +75,31 @@ export default function ThermagePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-40 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            토탈팁 이미지 영역
-          </div>
+          <ContentImageFrame
+            src="/content/energy-lifting/thermage/total-tip.jpg"
+            alt="써마지 토탈팁 비주얼"
+            className="w-full h-40 mb-4"
+            fit="contain"
+          />
           <h3 className="text-lg font-bold text-foreground mb-2">토탈팁 (Total Tip)</h3>
           <p className="text-sm text-text-muted leading-relaxed">얼굴 전체의 리프팅과 타이트닝에 최적화된 팁으로, 넓은 면적을 균일하게 시술합니다.</p>
         </div>
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-40 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            아이팁 이미지 영역
-          </div>
+          <ContentImageFrame
+            src="/content/energy-lifting/thermage/eye-tip.jpg"
+            alt="써마지 아이팁 비주얼"
+            className="w-full h-40 mb-4"
+            fit="contain"
+          />
           <h3 className="text-lg font-bold text-foreground mb-2">아이팁 (Eye Tip)</h3>
           <p className="text-sm text-text-muted leading-relaxed">눈가 주름과 처진 눈꺼풀을 개선하기 위해 특별히 설계된 팁으로, 섬세한 눈 주변 시술이 가능합니다.</p>
         </div>
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-40 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            바디팁 이미지 영역
-          </div>
+          <ContentImageFrame
+            src="/content/energy-lifting/thermage/device.jpg"
+            alt="써마지 바디 시술 비주얼"
+            className="w-full h-40 mb-4"
+          />
           <h3 className="text-lg font-bold text-foreground mb-2">바디팁 (Body Tip)</h3>
           <p className="text-sm text-text-muted leading-relaxed">복부, 팔뚝, 허벅지 등 넓은 바디 부위의 피부 타이트닝에 최적화된 팁입니다.</p>
         </div>
@@ -141,11 +153,11 @@ export default function ThermagePage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <InfoCard
           title="써마지 마스터 보유"
-          description="Solta Medical 인증 써마지 마스터가 직접 시술하여 안전하고 효과적인 결과를 보장합니다."
+          description="숙련된 시술 경험을 바탕으로 부위별 에너지 전달과 샷 구성을 보다 정교하게 설계합니다."
         />
         <InfoCard
           title="정품 인증 장비"
-          description="정품 써마지 FLX 장비와 정품 시술팁만을 사용하여 시술의 안전성과 효과를 보장합니다."
+          description="정품 써마지 FLX 장비와 정품 시술팁을 기준으로 일관된 시술 환경을 유지합니다."
         />
         <InfoCard
           title="맞춤형 시술 설계"

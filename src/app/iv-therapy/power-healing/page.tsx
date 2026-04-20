@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function PowerHealingPage() {
@@ -13,7 +14,7 @@ export default function PowerHealingPage() {
       categoryHref="/iv-therapy"
       title="파워 힐링"
       subtitle="Power Healing IV Therapy"
-      description="에너지 충전, 운동 능력 향상, 남성 스태미나 강화를 위한 프리미엄 수액 테라피. 활력 넘치는 일상과 최상의 퍼포먼스를 만들어 드립니다."
+      description="활력 보충과 회복 리듬 관리를 위한 프리미엄 수액 테라피입니다."
       sideMenu={ivMenu.subItems}
       currentPath="/iv-therapy/power-healing"
     >
@@ -29,24 +30,27 @@ export default function PowerHealingPage() {
       {/* 수액 설명 */}
       <SectionTitle
         title="파워 힐링 수액이란?"
-        subtitle="에너지 충전, 운동 능력 향상, 남성 스태미나 강화에 특화된 프리미엄 수액 프로그램입니다."
+        subtitle="활력 저하와 회복 관리가 필요할 때 상담되는 프리미엄 수액 프로그램입니다."
       />
 
       <div className="flex flex-col lg:flex-row gap-8 mb-16">
         <div className="flex-1">
           <p className="text-text-muted leading-relaxed mb-4">
-            파워 힐링 수액은 에너지 레벨 향상, 운동 퍼포먼스 극대화, 남성 스태미나 강화에 필요한
-            고농도 영양소를 배합한 프리미엄 수액입니다. 격한 운동 후 근육 회복, 바쁜 일상에서의
-            체력 충전, 남성 활력 증진까지 파워풀한 에너지를 공급합니다.
+            파워 힐링 수액은 활력 저하와 회복 관리가 필요할 때 검토할 수 있는
+            프리미엄 수액입니다. 격한 운동 후 회복, 바쁜 일상에서의 체력 저하,
+            전반적인 컨디션 관리 방향을 함께 살펴 적용 여부를 정합니다.
           </p>
           <p className="text-text-muted leading-relaxed">
             DK서울의원의 가정의학과 전문의가 환자의 체력 상태, 운동 습관, 생활 패턴을 종합 진단한 후,
             최상의 퍼포먼스를 위한 최적의 성분을 개인별로 설계합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          파워 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/power-healing.jpg"
+          alt="파워 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}
@@ -66,7 +70,7 @@ export default function PowerHealingPage() {
         />
         <InfoCard
           title="아르기닌 & 카르니틴"
-          description="혈류 개선과 지방 연소를 촉진하여 남성 스태미나 강화와 운동 능력 향상에 도움을 줍니다."
+          description="활력과 에너지 대사 관점에서 자주 검토되는 성분으로, 운동과 생활 패턴에 따라 적용 방향이 달라질 수 있습니다."
         />
         <InfoCard
           title="아연 & 셀레늄"
@@ -78,7 +82,7 @@ export default function PowerHealingPage() {
         />
         <InfoCard
           title="고농도 비타민 C"
-          description="강력한 항산화 작용으로 운동 후 산화 스트레스를 줄이고, 면역력 강화와 조직 회복을 지원합니다."
+          description="운동 후 회복과 항산화 관리 관점에서 자주 언급되는 성분으로, 현재 컨디션에 따라 적용 방향이 달라질 수 있습니다."
         />
       </div>
 

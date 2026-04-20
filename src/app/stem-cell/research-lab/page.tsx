@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
@@ -31,10 +32,16 @@ export default function ResearchLabPage() {
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
           <h3 className="text-lg font-bold text-foreground mb-3">세포 연구실</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-4">
-            줄기세포의 분리, 배양, 분석을 수행하는 핵심 연구 공간입니다. 최첨단 장비를 갖추고 전문 연구원이 상주하여 세포의 품질과 안전성을 보장합니다.
+            줄기세포의 분리, 배양, 분석을 수행하는 핵심 연구 공간입니다. 전문 연구 인력과 장비를 기반으로 세포의 품질과 안전성 관리에 집중합니다.
           </p>
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm">
-            세포 연구실 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden">
+            <Image
+              src="/content/stem-cell/research-lab/lab-room.png"
+              alt="DK줄기세포 연구소 세포 연구실"
+              fill
+              sizes="(min-width: 768px) 28vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
@@ -42,8 +49,14 @@ export default function ResearchLabPage() {
           <p className="text-sm text-text-muted leading-relaxed mb-4">
             채취된 줄기세포를 안전하게 동결 보관하는 전용 공간입니다. 엄격한 온도 관리와 품질 기준을 유지하여 세포의 생존율과 활성도를 최상으로 유지합니다.
           </p>
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm">
-            뱅킹 연구실 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden">
+            <Image
+              src="/content/stem-cell/premium-cell-banking.jpg"
+              alt="DK줄기세포 연구소 뱅킹 연구실"
+              fill
+              sizes="(min-width: 768px) 28vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </div>
@@ -57,14 +70,67 @@ export default function ResearchLabPage() {
       {/* GMP 시설 */}
       <SectionTitle
         title="GMP 시설"
-        subtitle="의약품 제조 및 품질 관리 기준(GMP)에 준하는 시설을 갖추어 세포 치료의 안전성과 품질을 보장합니다."
+        subtitle="의약품 제조 및 품질 관리 기준(GMP)에 준하는 시설을 바탕으로 세포 관리의 안정성과 품질 체계를 운영합니다."
       />
 
-      <div className="w-full h-80 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-6">
-        GMP 시설 이미지 / 영상 삽입 영역
+      <div className="relative w-full h-80 bg-section-bg rounded-2xl overflow-hidden mb-6">
+        <Image
+          src="/content/stem-cell/research-lab/banking-room.png"
+          alt="DK줄기세포 연구소 GMP 환경"
+          fill
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-transparent" />
       </div>
-      <div className="w-full h-48 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        GMP 관련 추가 콘텐츠 예정 영역
+      <div className="grid grid-cols-1 gap-6 mb-16 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="rounded-2xl border border-border-color bg-card-bg p-6 sm:p-8">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+            Quality System
+          </p>
+          <h3 className="mb-4 text-lg font-bold text-foreground">
+            GMP 운영 관점에서 보는 연구 환경
+          </h3>
+          <p className="mb-6 text-sm leading-relaxed text-text-muted">
+            연구소 이미지는 단순 시설 소개보다, 실제 세포 보관과 품질 관리가
+            어떤 흐름 안에서 이뤄지는지 보여주는 역할을 합니다. DK서울의원은
+            세포 보관 환경과 계수 장비, 동선 관리까지 하나의 시스템으로
+            연결해 운영합니다.
+          </p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              "세포 보관 환경과 동선 분리",
+              "계수 및 품질 확인 절차 운영",
+              "연구소 내 직접 관리 기반",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-border-color/50 bg-white/70 px-4 py-3 text-sm text-foreground"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-section-bg">
+          <Image
+            src="/content/stem-cell/premium-cell-facility.jpg"
+            alt="DK줄기세포 연구소 품질 관리 시설 비주얼"
+            fill
+            sizes="(min-width: 1024px) 32vw, 100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/75">
+              Facility View
+            </p>
+            <p className="max-w-sm text-sm font-medium leading-relaxed">
+              연구와 보관, 품질 확인이 연결되는 실제 운영 환경 이미지를 함께
+              반영했습니다.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 줄기세포 연구소가 필요한 이유 */}
@@ -100,8 +166,14 @@ export default function ResearchLabPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            Cell Counter 장비 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden mb-4">
+            <Image
+              src="/content/stem-cell/research-lab/cell-counter.png"
+              alt="Cell Counter 장비"
+              fill
+              sizes="(min-width: 768px) 20vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <h3 className="text-lg font-bold text-foreground mb-2">Cell Counter</h3>
           <p className="text-sm text-text-muted leading-relaxed">
@@ -109,8 +181,14 @@ export default function ResearchLabPage() {
           </p>
         </div>
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            Cell-3 장비 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden mb-4">
+            <Image
+              src="/content/stem-cell/research-lab/cell-3.png"
+              alt="Cell-3 장비"
+              fill
+              sizes="(min-width: 768px) 20vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <h3 className="text-lg font-bold text-foreground mb-2">Cell-3</h3>
           <p className="text-sm text-text-muted leading-relaxed">
@@ -118,8 +196,14 @@ export default function ResearchLabPage() {
           </p>
         </div>
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            도립현미경 장비 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden mb-4">
+            <Image
+              src="/content/stem-cell/research-lab/inverted-microscope.png"
+              alt="Inverted Microscope 장비"
+              fill
+              sizes="(min-width: 768px) 20vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <h3 className="text-lg font-bold text-foreground mb-2">Inverted Microscope</h3>
           <p className="text-sm text-text-muted leading-relaxed">

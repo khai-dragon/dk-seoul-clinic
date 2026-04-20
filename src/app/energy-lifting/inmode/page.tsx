@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function InmodePage() {
         subtitle="인모드는 이스라엘 InMode사에서 개발한 복합 에너지 기반 리프팅 장비로, 고주파와 펄스 에너지를 동시에 활용하여 피부 심층부까지 효과적으로 에너지를 전달하는 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        인모드 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/inmode/device.webp"
+        alt="인모드 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle
@@ -76,7 +80,7 @@ export default function InmodePage() {
         />
         <InfoCard
           title="실시간 안전 시스템"
-          description="시술 중 피부 온도를 실시간 모니터링하여 화상 위험을 최소화하고 안전한 시술을 보장합니다."
+          description="시술 중 피부 온도를 실시간으로 모니터링하여 화상 위험을 낮추고 보다 안정적인 시술 환경을 돕습니다."
         />
         <InfoCard
           title="맞춤형 시술"

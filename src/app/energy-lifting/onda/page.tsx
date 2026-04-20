@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function OndaPage() {
         subtitle="온다는 이탈리아 DEKA사에서 개발한 마이크로웨이브 기반의 리프팅 장비로, Coolwaves 기술을 통해 선택적으로 지방세포를 파괴하고 피부를 타이트닝하는 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        온다 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/onda/device.webp"
+        alt="온다 리프팅 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle
@@ -84,7 +88,7 @@ export default function OndaPage() {
         />
         <InfoCard
           title="짧은 다운타임"
-          description="시술 후 일상생활에 빠르게 복귀할 수 있으며, 큰 부작용이 없습니다."
+          description="비교적 빠른 일상 복귀를 기대하는 분들이 상담 시 검토하는 바디·페이스 리프팅 옵션입니다."
         />
         <InfoCard
           title="넓은 시술 범위"

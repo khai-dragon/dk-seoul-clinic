@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function TimeHealingPage() {
@@ -44,9 +45,12 @@ export default function TimeHealingPage() {
             안티에이징에 최적화된 성분을 개인별로 설계합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          타임 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/time-healing.jpg"
+          alt="타임 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function DrVenusHealingPage() {
@@ -13,7 +14,7 @@ export default function DrVenusHealingPage() {
       categoryHref="/iv-therapy"
       title="닥터 비너스 힐링"
       subtitle="Dr. Venus Healing IV Therapy"
-      description="여성의 아름다움과 건강을 위한 프리미엄 수액 테라피. 호르몬 밸런스, 탈모 예방, 피부 미용까지 안에서부터 빛나는 여성 건강을 만들어 드립니다."
+      description="여성 컨디션 관리와 피부·영양 밸런스를 함께 살피는 프리미엄 수액 테라피입니다."
       sideMenu={ivMenu.subItems}
       currentPath="/iv-therapy/dr-venus-healing"
     >
@@ -35,8 +36,8 @@ export default function DrVenusHealingPage() {
       <div className="flex flex-col lg:flex-row gap-8 mb-16">
         <div className="flex-1">
           <p className="text-text-muted leading-relaxed mb-4">
-            닥터 비너스 힐링 수액은 여성의 호르몬 밸런스, 피부 미용, 탈모 예방, 갱년기 증상 완화 등
-            여성 건강 전반에 필요한 고농도 영양소를 배합한 프리미엄 수액입니다. 단순한 피부 미용을 넘어
+            닥터 비너스 힐링 수액은 여성의 호르몬 밸런스, 피부 컨디션, 영양 관리 등을 함께 살펴볼 때
+            검토할 수 있는 프리미엄 수액입니다. 단순한 피부 미용을 넘어
             여성의 라이프사이클에 맞춘 근본적인 건강 관리를 제공합니다.
           </p>
           <p className="text-text-muted leading-relaxed">
@@ -44,9 +45,12 @@ export default function DrVenusHealingPage() {
             개인별 최적의 성분을 설계합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          닥터 비너스 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/dr-venus-healing.jpg"
+          alt="닥터 비너스 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}
@@ -62,15 +66,15 @@ export default function DrVenusHealingPage() {
         />
         <InfoCard
           title="고농도 비타민 C"
-          description="콜라겐 합성을 촉진하여 피부 탄력을 개선하고, 면역력 강화와 호르몬 밸런스에도 도움을 줍니다."
+          description="피부 컨디션과 영양 균형을 함께 살펴볼 때 자주 언급되는 성분으로, 개인 상태에 따라 적용 방향이 달라질 수 있습니다."
         />
         <InfoCard
           title="비오틴 & 판토텐산"
-          description="모발 성장에 필수적인 영양소로 탈모 예방과 모발 건강을 돕고, 손톱과 피부 건강도 개선합니다."
+          description="모발과 피부 컨디션 관리 관점에서 자주 언급되는 영양소로, 개인 상태에 따라 적용이 달라질 수 있습니다."
         />
         <InfoCard
           title="여성 호르몬 밸런스 성분"
-          description="갱년기 증상 완화와 호르몬 균형에 도움을 주는 성분으로 안면홍조, 불면, 기분 변화 등을 개선합니다."
+          description="호르몬 변화로 인한 컨디션 관리 상담 시 참고될 수 있는 성분으로, 실제 적용 여부는 진료 판단에 따라 결정됩니다."
         />
         <InfoCard
           title="알파리포산"

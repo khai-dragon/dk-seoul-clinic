@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import { menuData } from "@/lib/menu-data";
+import VisualPanel from "../_components/VisualPanel";
 
 export const metadata = {
   title: "보톡스 | 스킨 리모델링 | DK서울의원",
@@ -29,38 +30,48 @@ export default function BotoxPage() {
           title="보톡스란?"
           subtitle="보톡스는 보툴리눔 톡신 성분을 이용하여 근육의 움직임을 일시적으로 조절하는 시술입니다. 표정 주름 개선부터 사각턱 축소, 다한증 치료까지 다양한 목적으로 활용되며, 간편하면서도 효과적인 안티에이징 시술로 많은 분들이 선택하고 있습니다."
         />
-        <div className="bg-section-bg rounded-2xl p-6 sm:p-8">
-          <h3 className="text-lg font-bold text-foreground mb-4">
-            보톡스 시술의 원리
-          </h3>
-          <p className="text-sm text-text-muted leading-relaxed mb-4">
-            보톡스는 근육에 신호를 전달하는 신경전달물질(아세틸콜린)의 분비를
-            일시적으로 차단하여 과도하게 수축된 근육을 이완시킵니다. 이를 통해
-            주름을 펴고, 발달한 근육의 크기를 줄이며, 땀 분비를 조절하는
-            효과를 얻을 수 있습니다.
-          </p>
-          <ul className="space-y-3 text-sm text-text-muted leading-relaxed">
-            <li className="flex items-start gap-3">
-              <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
-              <span>
-                시술 시간이 10~20분으로 짧아 일상생활에 지장이 없습니다.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
-              <span>
-                시술 후 3~7일부터 효과가 나타나기 시작하며, 2주 후 최대
-                효과를 확인할 수 있습니다.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
-              <span>
-                효과 지속 기간은 3~6개월이며, 정기적인 시술로 효과를
-                유지할 수 있습니다.
-              </span>
-            </li>
-          </ul>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="bg-section-bg rounded-2xl p-6 sm:p-8">
+            <h3 className="text-lg font-bold text-foreground mb-4">
+              보톡스 시술의 원리
+            </h3>
+            <p className="text-sm text-text-muted leading-relaxed mb-4">
+              보톡스는 근육에 신호를 전달하는 신경전달물질(아세틸콜린)의
+              분비를 일시적으로 차단하여 과도하게 수축된 근육을
+              이완시킵니다. 이를 통해 주름을 펴고, 발달한 근육의 크기를
+              줄이며, 땀 분비를 조절하는 효과를 얻을 수 있습니다.
+            </p>
+            <ul className="space-y-3 text-sm text-text-muted leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span>
+                  시술 시간이 10~20분으로 짧아 일상생활에 지장이 없습니다.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span>
+                  시술 후 3~7일부터 효과가 나타나기 시작하며, 2주 후 최대
+                  효과를 확인할 수 있습니다.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <span>
+                  효과 지속 기간은 3~6개월이며, 정기적인 시술로 효과를
+                  유지할 수 있습니다.
+                </span>
+              </li>
+            </ul>
+          </div>
+          <VisualPanel
+            src="/content/skin-remodeling/shared/injection-closeup.jpg"
+            alt="보톡스 시술 디테일 비주얼"
+            className="min-h-[320px]"
+            caption="표정은 과하지 않게, 변화는 자연스럽게 설계하는 방향으로 상담합니다."
+            eyebrow="Botox Detail"
+            priority
+          />
         </div>
       </section>
 
@@ -117,6 +128,48 @@ export default function BotoxPage() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+          <VisualPanel
+            src="/content/skin-remodeling/shared/collagen-injection.jpg"
+            alt="보톡스 상담 포인트 비주얼"
+            className="min-h-[260px]"
+            caption="시술 부위별 근육의 움직임과 원하는 인상 변화를 함께 확인합니다."
+            eyebrow="Consult Point"
+          />
+          <div className="rounded-[28px] border border-border-color/60 bg-card-bg p-6 sm:p-8">
+            <h3 className="mb-4 text-lg font-bold text-foreground">
+              상담 시 함께 보는 포인트
+            </h3>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                {
+                  title: "표정 습관",
+                  desc: "주름이 반복되는 표정 패턴과 움직임의 강도를 먼저 확인합니다.",
+                },
+                {
+                  title: "근육 발달 정도",
+                  desc: "사각턱이나 턱끝처럼 윤곽과 연결되는 부위는 근육량과 좌우 차이를 함께 봅니다.",
+                },
+                {
+                  title: "원하는 변화",
+                  desc: "자연스러운 완화인지, 보다 또렷한 윤곽 정리인지 목표에 맞춰 강도를 조절합니다.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-border-color/50 bg-white/70 p-4"
+                >
+                  <h4 className="mb-2 text-sm font-semibold text-foreground">
+                    {item.title}
+                  </h4>
+                  <p className="text-[13px] leading-relaxed text-text-muted">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

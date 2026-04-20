@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function DetoxHealingPage() {
@@ -13,7 +14,7 @@ export default function DetoxHealingPage() {
       categoryHref="/iv-therapy"
       title="디톡스 힐링"
       subtitle="Detox Healing IV Therapy"
-      description="체내 독소 배출과 간 기능 회복을 위한 프리미엄 수액 테라피. 몸속 독소를 제거하고 깨끗한 컨디션을 되찾아 드립니다."
+      description="컨디션 정리와 회복 관리를 위한 프리미엄 수액 테라피입니다."
       sideMenu={ivMenu.subItems}
       currentPath="/iv-therapy/detox-healing"
     >
@@ -29,7 +30,7 @@ export default function DetoxHealingPage() {
       {/* 수액 설명 */}
       <SectionTitle
         title="디톡스 힐링 수액이란?"
-        subtitle="체내 독소 배출과 간 기능 회복에 특화된 프리미엄 수액 프로그램입니다."
+        subtitle="과로, 음주, 생활 리듬 불균형 이후 컨디션 회복을 관리할 때 상담되는 프리미엄 수액 프로그램입니다."
       />
 
       <div className="flex flex-col lg:flex-row gap-8 mb-16">
@@ -44,15 +45,18 @@ export default function DetoxHealingPage() {
             디톡스에 최적화된 성분을 개인별로 설계합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          디톡스 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/detox-healing.jpg"
+          alt="디톡스 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}
       <SectionTitle
         title="주요 성분 및 효과"
-        subtitle="간 해독과 독소 배출에 핵심적인 고농도 영양 성분을 배합합니다."
+        subtitle="회복과 영양 균형 관리 관점에서 자주 언급되는 고농도 영양 성분을 배합합니다."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
@@ -62,7 +66,7 @@ export default function DetoxHealingPage() {
         />
         <InfoCard
           title="아미노산 복합체"
-          description="간 대사 기능에 필수적인 아미노산을 공급하여 해독 효소 활성화와 간 기능 회복을 지원합니다."
+          description="회복과 대사 균형을 설명할 때 자주 언급되는 아미노산 성분으로, 현재 상태에 따라 적용 방향이 달라질 수 있습니다."
         />
         <InfoCard
           title="고농도 비타민 B군"

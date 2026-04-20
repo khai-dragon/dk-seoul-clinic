@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function BrainHealingPage() {
@@ -13,7 +14,7 @@ export default function BrainHealingPage() {
       categoryHref="/iv-therapy"
       title="브레인 힐링"
       subtitle="Brain Healing IV Therapy"
-      description="두뇌 건강과 집중력 회복을 위한 프리미엄 수액 테라피. 과로와 스트레스로 지친 두뇌에 활력을 되찾아 드립니다."
+      description="과로와 집중 저하로 지친 컨디션 관리를 돕는 프리미엄 수액 테라피입니다."
       sideMenu={ivMenu.subItems}
       currentPath="/iv-therapy/brain-healing"
     >
@@ -29,24 +30,26 @@ export default function BrainHealingPage() {
       {/* 수액 설명 */}
       <SectionTitle
         title="브레인 힐링 수액이란?"
-        subtitle="두뇌 건강과 집중력 회복에 특화된 프리미엄 수액 프로그램입니다."
+        subtitle="집중 저하와 정신적 피로가 누적된 상태를 관리할 때 상담되는 프리미엄 수액 프로그램입니다."
       />
 
       <div className="flex flex-col lg:flex-row gap-8 mb-16">
         <div className="flex-1">
           <p className="text-text-muted leading-relaxed mb-4">
-            브레인 힐링 수액은 두뇌 기능 활성화와 집중력 향상에 필요한 핵심 영양소를 고농도로 배합한
-            프리미엄 수액입니다. 과로, 스트레스, 수면 부족 등으로 인한 두뇌 피로를 빠르게 회복시키고,
-            인지 기능과 기억력 개선에 도움을 줍니다.
+            브레인 힐링 수액은 과로, 스트레스, 수면 부족 등으로 인한 정신적 피로를 관리할 때 검토할 수 있는
+            프리미엄 수액입니다. 컨디션과 생활 리듬, 현재 느끼는 불편을 함께 살펴 적용 방향을 정합니다.
           </p>
           <p className="text-text-muted leading-relaxed">
             DK서울의원의 가정의학과 전문의가 환자의 상태를 정밀 진단한 후,
             개인에게 최적화된 성분과 용량으로 수액을 배합하여 투여합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          브레인 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/brain-healing.jpg"
+          alt="브레인 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}
@@ -58,7 +61,7 @@ export default function BrainHealingPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
         <InfoCard
           title="고농도 비타민 B군"
-          description="신경 전달 물질 합성을 촉진하고 두뇌 에너지 대사를 활성화하여 집중력과 기억력을 향상시킵니다."
+          description="에너지 대사와 영양 균형 관점에서 정신적 피로 관리 방향을 설명할 때 자주 검토되는 성분입니다."
         />
         <InfoCard
           title="아미노산 복합체"

@@ -29,7 +29,7 @@
   --color-text-muted: var(--text-muted);
   --color-border-color: var(--border-color);
   --font-sans: "Pretendard", "Apple SD Gothic Neo", sans-serif;
-  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-serif: var(--font-cormorant), "Georgia", serif;
 }
 
 body {
@@ -45,7 +45,7 @@ html {
 
 /* Serif accent headings */
 .font-serif {
-  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-family: var(--font-cormorant), "Georgia", serif;
 }
 
 /* Mega Menu */

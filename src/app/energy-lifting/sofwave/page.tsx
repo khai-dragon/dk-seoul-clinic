@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function SofwavePage() {
         subtitle="소프웨이브는 이스라엘에서 개발된 차세대 초음파 리프팅 장비로, SUPERB 기술을 활용하여 진피 중간층(1.5mm)에 균일한 열 에너지를 전달하는 비침습적 리프팅 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        소프웨이브 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/sofwave/device.webp"
+        alt="소프웨이브 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle
@@ -88,7 +92,7 @@ export default function SofwavePage() {
         />
         <InfoCard
           title="높은 안전성"
-          description="FDA 승인을 받은 안전한 시술로, 화상이나 신경 손상의 위험이 매우 낮습니다."
+          description="해외 인허가 이력을 바탕으로 안전성과 시술 경험이 축적된 리프팅 장비로 소개됩니다."
         />
         <InfoCard
           title="점진적 효과"

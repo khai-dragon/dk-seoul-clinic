@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -104,8 +105,25 @@ export default function HyperbaricOxygenSolutionPage() {
       </div>
 
       {/* 치료 과정 이미지 */}
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm">
-        고압산소치료 과정 안내 이미지 영역
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ContentImageFrame
+          src="/content/hyperbaric-oxygen/solution/process-1-2.jpg"
+          alt="고압산소치료 과정 1단계와 2단계 비주얼"
+          className="w-full h-72"
+          overlay
+        />
+        <ContentImageFrame
+          src="/content/hyperbaric-oxygen/solution/process-3-4.jpg"
+          alt="고압산소치료 과정 3단계와 4단계 비주얼"
+          className="w-full h-72"
+          overlay
+        />
+        <ContentImageFrame
+          src="/content/hyperbaric-oxygen/solution/process-5-6.jpg"
+          alt="고압산소치료 과정 5단계와 6단계 비주얼"
+          className="w-full h-72"
+          overlay
+        />
       </div>
     </SubPageLayout>
   );

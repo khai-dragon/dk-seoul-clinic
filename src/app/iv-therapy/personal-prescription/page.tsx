@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function PersonalPrescriptionPage() {
@@ -48,9 +49,12 @@ export default function PersonalPrescriptionPage() {
             최상의 건강 관리를 원하는 분께 추천하는 프리미엄 서비스입니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          퍼스널수액 처방 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/personal-prescription.jpg"
+          alt="퍼스널수액 처방 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 퍼스널수액의 차별점 */}

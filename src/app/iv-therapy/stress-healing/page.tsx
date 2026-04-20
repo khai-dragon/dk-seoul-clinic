@@ -2,6 +2,7 @@ import Link from "next/link";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export default function StressHealingPage() {
@@ -13,7 +14,7 @@ export default function StressHealingPage() {
       categoryHref="/iv-therapy"
       title="스트레스 힐링"
       subtitle="Stress Healing IV Therapy"
-      description="심신 안정과 스트레스 해소를 위한 프리미엄 수액 테라피. 만성 스트레스와 불안에서 벗어나 편안한 일상을 되찾아 드립니다."
+      description="긴장 완화와 휴식 리듬 관리를 위한 프리미엄 수액 테라피입니다."
       sideMenu={ivMenu.subItems}
       currentPath="/iv-therapy/stress-healing"
     >
@@ -36,16 +37,19 @@ export default function StressHealingPage() {
         <div className="flex-1">
           <p className="text-text-muted leading-relaxed mb-4">
             스트레스 힐링 수액은 자율신경계 안정과 심리적 긴장 완화에 필요한 핵심 영양소를 고농도로 배합한
-            프리미엄 수액입니다. 만성 스트레스, 불안감, 수면 장애 등을 체내 영양 균형 회복을 통해 근본적으로 개선합니다.
+            프리미엄 수액입니다. 만성 스트레스, 긴장감, 휴식 리듬 불균형이 있을 때 컨디션 관리 방향을 함께 살펴봅니다.
           </p>
           <p className="text-text-muted leading-relaxed">
             스트레스가 지속되면 체내 마그네슘, 비타민 등 핵심 영양소가 급격히 소모됩니다.
             DK서울의원의 전문의가 부족한 영양소를 정확히 파악하여 최적의 수액을 설계합니다.
           </p>
         </div>
-        <div className="lg:w-80 shrink-0 bg-section-bg rounded-2xl aspect-[4/3] flex items-center justify-center text-text-muted">
-          스트레스 힐링 이미지 영역
-        </div>
+        <ContentImageFrame
+          src="/content/iv-therapy/stress-healing.jpg"
+          alt="스트레스 힐링 수액 테라피 비주얼"
+          className="lg:w-80 shrink-0 aspect-[4/3]"
+          overlay
+        />
       </div>
 
       {/* 주요 성분 및 효과 */}

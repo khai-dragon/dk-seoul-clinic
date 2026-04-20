@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function VolnewmerPage() {
         subtitle="볼뉴머는 고주파(RF) 에너지를 진피층에 정밀하게 전달하여 콜라겐과 엘라스틴의 생성을 촉진하고, 잃어버린 볼륨을 회복하면서 리프팅 효과까지 제공하는 시술입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        볼뉴머 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/volnewmer/device.webp"
+        alt="볼뉴머 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle

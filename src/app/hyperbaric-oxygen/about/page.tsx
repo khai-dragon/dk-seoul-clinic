@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function HyperbaricOxygenAboutPage() {
       categoryHref="/hyperbaric-oxygen"
       title="고압산소케어란"
       subtitle="What is Hyperbaric Oxygen Care"
-      description="고압산소치료의 정의와 원리, 그리고 우리 몸에 미치는 효과를 알아봅니다."
+      description="고압산소치료의 정의와 원리, 그리고 컨디션 관리 관점에서의 활용 방향을 소개합니다."
       sideMenu={oxygenMenu.subItems}
       currentPath="/hyperbaric-oxygen/about"
     >
@@ -27,40 +28,43 @@ export default function HyperbaricOxygenAboutPage() {
         subtitle="일반 대기압보다 높은 압력 환경에서 고농도 산소를 호흡하여, 혈액과 체내 조직에 산소를 충분히 공급하는 치료법입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        고압산소치료 개념 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/hyperbaric-oxygen/about/concept.jpg"
+        alt="고압산소치료 개념 비주얼"
+        className="w-full h-72 mb-16"
+        overlay
+      />
 
       {/* 치료 목적 */}
       <SectionTitle
         title="고압산소치료의 목적"
-        subtitle="체내 산소 농도를 높여 손상된 조직의 회복을 촉진하고, 다양한 건강 문제를 개선하는 것을 목표로 합니다."
+        subtitle="체내 산소 농도를 높여 회복 환경을 돕고, 컨디션 관리 관점에서 어떤 방식으로 활용되는지 살펴봅니다."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         <InfoCard
           title="조직 회복 촉진"
-          description="고농도 산소가 손상된 조직에 직접 전달되어 세포 재생과 회복 속도를 높여줍니다."
+          description="고농도 산소 공급은 회복이 필요한 조직 환경을 설명할 때 자주 언급되는 접근입니다."
         />
         <InfoCard
-          title="항염 및 면역력 강화"
-          description="체내 염증 반응을 억제하고 면역 세포의 활성도를 높여 면역력을 강화합니다."
+          title="염증 및 회복 관리"
+          description="염증 반응과 회복 리듬을 함께 살펴보는 보조적 관리 관점에서 검토될 수 있습니다."
         />
         <InfoCard
           title="혈액 순환 개선"
-          description="산소 용해도를 증가시켜 모세혈관까지 산소가 원활하게 공급되도록 돕습니다."
+          description="산소 용해도 증가를 통해 산소 전달 환경을 보다 원활하게 이해하는 데 도움을 줍니다."
         />
         <InfoCard
           title="피로 회복"
-          description="세포 에너지 생산을 촉진하여 만성피로와 컨디션 저하를 개선합니다."
+          description="과로와 컨디션 저하가 있을 때 회복 관리 선택지 중 하나로 상담될 수 있습니다."
         />
         <InfoCard
-          title="뇌기능 활성화"
-          description="뇌에 충분한 산소를 공급하여 집중력, 기억력 등 인지 기능 향상에 도움을 줍니다."
+          title="집중 리듬 관리"
+          description="집중력 저하나 멍한 느낌이 있을 때 회복 리듬 관점에서 보조적으로 검토될 수 있습니다."
         />
         <InfoCard
-          title="노화 방지"
-          description="세포 수준에서 산화 스트레스를 줄이고 텔로미어 길이 유지에 기여하여 항노화 효과를 기대할 수 있습니다."
+          title="항산화 관리"
+          description="산화 스트레스 관리와 전반적인 컨디션 케어 관점에서 설명될 수 있는 접근입니다."
         />
       </div>
 
@@ -70,9 +74,12 @@ export default function HyperbaricOxygenAboutPage() {
         subtitle="대기압보다 높은 압력 환경에서 산소를 호흡하면, 혈장에 녹는 산소량이 크게 증가하여 평소 산소가 도달하기 어려운 조직까지 산소가 공급됩니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-10">
-        고압산소치료 원리 도식 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/hyperbaric-oxygen/about/principle.webp"
+        alt="고압산소치료 원리 도식"
+        className="w-full h-72 mb-10"
+        fit="contain"
+      />
 
       <div className="bg-card-bg rounded-2xl border border-border-color p-8 mb-8">
         <div className="space-y-6">

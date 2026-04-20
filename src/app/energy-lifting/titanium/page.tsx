@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function TitaniumPage() {
         subtitle="티타늄은 3가지 파장(1060nm, 1470nm, 2940nm)의 레이저를 동시에 조사하여 피부의 다양한 층을 한 번에 개선하는 차세대 레이저 리프팅 장비입니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        티타늄 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/titanium/device.webp"
+        alt="티타늄 리프팅 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle

@@ -1,47 +1,52 @@
+import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
-import { menuData } from "@/lib/menu-data";
 
 export default function IVTherapyPage() {
-  const ivMenu = menuData.find((m) => m.href === "/iv-therapy");
-
   const therapies = [
     {
       name: "브레인 힐링",
       href: "/iv-therapy/brain-healing",
-      description: "두뇌 건강과 집중력 회복을 위한 수액. 과로, 스트레스로 인한 두뇌 피로 시 추천",
+      description: "과로와 집중 저하로 지친 컨디션 관리를 돕는 수액 프로그램입니다.",
+      imageSrc: "/content/iv-therapy/brain-healing.jpg",
     },
     {
       name: "닥터 비너스 힐링",
       href: "/iv-therapy/dr-venus-healing",
       description: "피부 미용과 탄력을 위한 수액. 피부 노화, 건조, 칙칙한 피부톤 고민 시 추천",
+      imageSrc: "/content/iv-therapy/dr-venus-healing.jpg",
     },
     {
       name: "스트레스 힐링",
       href: "/iv-therapy/stress-healing",
-      description: "심신 안정과 스트레스 해소를 위한 수액. 만성 스트레스, 불안, 수면 장애 시 추천",
+      description: "긴장 완화와 휴식 리듬 관리를 돕는 수액 프로그램입니다.",
+      imageSrc: "/content/iv-therapy/stress-healing.jpg",
     },
     {
       name: "타임 힐링",
       href: "/iv-therapy/time-healing",
       description: "노화 방지와 에너지 회복을 위한 수액. 활력 저하, 항산화가 필요할 때 추천",
+      imageSrc: "/content/iv-therapy/time-healing.jpg",
     },
     {
       name: "디톡스 힐링",
       href: "/iv-therapy/detox-healing",
-      description: "체내 독소 배출과 간 기능 회복을 위한 수액. 잦은 음주, 독소 배출이 필요할 때 추천",
+      description: "컨디션 정리와 회복 관리를 돕는 수액 프로그램입니다.",
+      imageSrc: "/content/iv-therapy/detox-healing.jpg",
     },
     {
       name: "파워 힐링",
       href: "/iv-therapy/power-healing",
-      description: "체력 회복과 면역력 강화를 위한 수액. 수술 후 회복, 면역력 개선 시 추천",
+      description: "활력 보충과 회복 리듬 관리를 돕는 수액 프로그램입니다.",
+      imageSrc: "/content/iv-therapy/power-healing.jpg",
     },
     {
       name: "퍼스널수액 처방",
       href: "/iv-therapy/personal-prescription",
       description: "가정의학과 전문의 심층 상담 후 진단에 따라 진행되는 프리미엄 맞춤 수액 테라피",
+      imageSrc: "/content/iv-therapy/personal-prescription.jpg",
     },
   ];
 
@@ -54,6 +59,52 @@ export default function IVTherapyPage() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <nav className="flex items-center gap-2 text-sm text-text-muted mb-10">
+          <Link href="/" className="hover:text-primary">홈</Link>
+          <span>/</span>
+          <span className="text-primary font-medium">수액 테라피</span>
+        </nav>
+
+        <div className="bg-card-bg border border-border-color rounded-3xl p-8 sm:p-10 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] gap-8 items-center">
+            <div>
+              <p className="font-serif text-accent text-lg italic tracking-wide mb-3">Tailored Infusion</p>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
+                오늘의 컨디션과 회복 목적에 맞춰<br />정교하게 설계하는 수액 테라피
+              </h2>
+              <p className="text-sm sm:text-[15px] text-text-muted leading-relaxed max-w-2xl">
+                DK서울의원의 수액 테라피는 일괄적인 배합보다 현재 컨디션과 생활 리듬,
+                피로 양상과 회복 목표를 함께 읽는 방식으로 진행됩니다.
+                빠른 컨디션 회복부터 장기적인 밸런스 관리까지 자연스럽게 연결합니다.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+                {[
+                  "가정의학과 전문의 진단 기반",
+                  "목적별 프로그램 + 맞춤 처방",
+                  "편안한 라운지형 케어 환경",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-border-color bg-section-bg px-4 py-3 text-sm text-foreground"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative min-h-[240px] sm:min-h-[300px] rounded-[28px] overflow-hidden bg-section-bg">
+              <Image
+                src="/content/iv-therapy/personal-prescription.jpg"
+                alt="DK서울의원 수액 테라피 비주얼"
+                fill
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-transparent" />
+            </div>
+          </div>
+        </div>
+
         {/* 맞춤 수액이 중요한 이유 */}
         <SectionTitle
           title="맞춤 수액 배합이 중요한 이유"
@@ -83,19 +134,31 @@ export default function IVTherapyPage() {
           center
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-20">
           {therapies.map((therapy) => (
             <Link
               key={therapy.href}
               href={therapy.href}
-              className="service-card bg-card-bg rounded-2xl p-6 border border-border-color group"
+              className="service-card bg-card-bg rounded-2xl border border-border-color overflow-hidden group"
             >
-              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {therapy.name}
-              </h3>
-              <p className="text-sm text-text-muted leading-relaxed">{therapy.description}</p>
-              <div className="mt-4 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                자세히 보기 →
+              <div className="relative h-52 overflow-hidden bg-section-bg">
+                <Image
+                  src={therapy.imageSrc}
+                  alt={therapy.name}
+                  fill
+                  sizes="(min-width: 1280px) 24vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {therapy.name}
+                </h3>
+                <p className="text-sm text-text-muted leading-relaxed">{therapy.description}</p>
+                <div className="mt-4 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  자세히 보기 →
+                </div>
               </div>
             </Link>
           ))}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
@@ -37,11 +38,17 @@ export default function CellTherapyPage() {
               DK서울의원에서는 환자의 상태와 치료 목적에 따라 최적의 줄기세포 유형을 선택하여 개인 맞춤형 셀테라피를 제공합니다.
             </p>
             <p className="text-sm text-text-muted leading-relaxed">
-              자체 줄기세포 연구소에서 채취, 분리, 배양, 투여까지 전 과정을 직접 관리하여 안전하고 효과적인 치료를 보장합니다.
+              자체 줄기세포 연구소에서 채취, 분리, 배양, 투여까지 전 과정을 직접 관리하여 일관된 세포 관리와 진료 흐름을 구축합니다.
             </p>
           </div>
-          <div className="w-full h-64 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm">
-            줄기세포 개념 이미지 영역
+          <div className="relative w-full h-64 bg-section-bg rounded-xl overflow-hidden">
+            <Image
+              src="/content/stem-cell/cell-therapy/concept.jpg"
+              alt="줄기세포 개념 비주얼"
+              fill
+              sizes="(min-width: 768px) 28vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </div>
@@ -52,11 +59,18 @@ export default function CellTherapyPage() {
         subtitle="치료 목적과 환자 상태에 따라 다양한 유래의 줄기세포를 활용합니다."
       />
 
+      <div className="relative w-full h-64 bg-card-bg rounded-2xl border border-border-color overflow-hidden mb-8">
+        <Image
+          src="/content/stem-cell/cell-therapy/types-overview.png"
+          alt="혈액 유래, 지방 유래, 골수 유래 줄기세포 도식"
+          fill
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-contain bg-white p-4 sm:p-6"
+        />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            혈액 유래 줄기세포 이미지 영역
-          </div>
           <h3 className="text-lg font-bold text-foreground mb-2">혈액 유래 줄기세포</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-3">
             말초 혈액에서 채취하는 줄기세포로, 비교적 간편한 채취 과정이 장점입니다.
@@ -78,9 +92,6 @@ export default function CellTherapyPage() {
         </div>
 
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            지방 유래 줄기세포 이미지 영역
-          </div>
           <h3 className="text-lg font-bold text-foreground mb-2">지방 유래 줄기세포</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-3">
             지방 조직에서 추출하는 줄기세포로, 풍부한 세포 수를 확보할 수 있습니다.
@@ -102,9 +113,6 @@ export default function CellTherapyPage() {
         </div>
 
         <div className="bg-card-bg rounded-2xl border border-border-color p-6">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-4">
-            골수 유래 줄기세포 이미지 영역
-          </div>
           <h3 className="text-lg font-bold text-foreground mb-2">골수 유래 줄기세포</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-3">
             골수에서 채취하는 줄기세포로, 가장 오랜 연구 역사를 가진 줄기세포입니다.
@@ -134,27 +142,39 @@ export default function CellTherapyPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="bg-card-bg rounded-2xl border border-border-color p-8">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-6">
-            정맥 주사 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden mb-6">
+            <Image
+              src="/content/stem-cell/cell-therapy/iv-injection.jpg"
+              alt="정맥 주사 방식 줄기세포 치료 비주얼"
+              fill
+              sizes="(min-width: 768px) 28vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <h3 className="text-xl font-bold text-foreground mb-3">정맥 주사 (IV Injection)</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-4">
-            줄기세포를 정맥을 통해 전신에 투여하는 방법입니다. 혈류를 따라 전신으로 순환하며 손상된 부위를 찾아가 재생을 촉진합니다.
+            줄기세포를 정맥을 통해 전신에 투여하는 방법입니다. 전신 순환을 통해 컨디션 관리 방향을 상담할 때 참고되는 방식으로 설명됩니다.
           </p>
           <div className="space-y-2">
             <h4 className="text-xs font-semibold text-primary uppercase tracking-wider">적용 분야</h4>
             <div className="flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">전신 항노화</span>
-              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">면역력 강화</span>
-              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">만성 피로 회복</span>
-              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">장기 기능 개선</span>
+              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">전신 컨디션 관리</span>
+              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">면역 밸런스 관리</span>
+              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">피로 관리 상담</span>
+              <span className="px-2.5 py-1 bg-section-bg text-xs text-text-muted rounded-full">회복 방향 검토</span>
             </div>
           </div>
         </div>
 
         <div className="bg-card-bg rounded-2xl border border-border-color p-8">
-          <div className="w-full h-48 bg-section-bg rounded-xl flex items-center justify-center text-text-muted text-sm mb-6">
-            피부 주사 이미지 영역
+          <div className="relative w-full h-48 bg-section-bg rounded-xl overflow-hidden mb-6">
+            <Image
+              src="/content/stem-cell/cell-therapy/skin-injection.jpg"
+              alt="피부 주사 방식 줄기세포 치료 비주얼"
+              fill
+              sizes="(min-width: 768px) 28vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <h3 className="text-xl font-bold text-foreground mb-3">피부 주사 (Skin Injection)</h3>
           <p className="text-sm text-text-muted leading-relaxed mb-4">

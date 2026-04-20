@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
@@ -28,11 +29,23 @@ export default function PremiumCellPage() {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        <div className="w-full h-64 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm">
-          셀뱅킹 시설 이미지 영역
+        <div className="relative w-full h-64 bg-section-bg rounded-2xl overflow-hidden border border-border-color/50">
+          <Image
+            src="/content/stem-cell/premium-cell-banking.jpg"
+            alt="DK 프리미엄 셀관리 셀뱅킹 비주얼"
+            fill
+            sizes="(min-width: 768px) 32vw, 100vw"
+            className="object-cover"
+          />
         </div>
-        <div className="w-full h-64 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm">
-          셀뱅킹 장비 이미지 영역
+        <div className="relative w-full h-64 bg-section-bg rounded-2xl overflow-hidden border border-border-color/50">
+          <Image
+            src="/content/stem-cell/premium-cell-facility.jpg"
+            alt="DK 프리미엄 셀관리 시설 비주얼"
+            fill
+            sizes="(min-width: 768px) 32vw, 100vw"
+            className="object-cover"
+          />
         </div>
       </div>
 
@@ -42,8 +55,14 @@ export default function PremiumCellPage() {
         subtitle="정밀한 셀카운팅 시스템을 통해 세포의 수량과 활성도를 정확하게 측정하고 관리합니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        셀카운팅 장비 이미지 영역
+      <div className="relative w-full h-72 bg-section-bg rounded-2xl overflow-hidden border border-border-color/50 mb-16">
+        <Image
+          src="/content/stem-cell/premium-cell-counter.png"
+          alt="DK 프리미엄 셀관리 셀카운팅 시스템 비주얼"
+          fill
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-contain bg-white p-6"
+        />
       </div>
 
       {/* 서비스 활용 장점 */}

@@ -1,6 +1,7 @@
 import SubPageLayout from "@/components/SubPageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import InfoCard from "@/components/InfoCard";
+import ContentImageFrame from "@/components/ContentImageFrame";
 import { menuData } from "@/lib/menu-data";
 
 export const metadata = {
@@ -27,9 +28,12 @@ export default function ShrinkPage() {
         subtitle="슈링크 유니버스는 한국 클래시스사에서 개발한 HIFU 리프팅 장비로, 독자적인 선형 초음파 기술을 통해 넓은 면적에 균일한 에너지를 전달하여 효과적인 리프팅을 실현합니다."
       />
 
-      <div className="w-full h-72 bg-section-bg rounded-2xl flex items-center justify-center text-text-muted text-sm mb-16">
-        슈링크 유니버스 장비 이미지 영역
-      </div>
+      <ContentImageFrame
+        src="/content/energy-lifting/shrink/device.webp"
+        alt="슈링크 유니버스 장비 비주얼"
+        className="w-full h-72 mb-16"
+        fit="contain"
+      />
 
       {/* 시술 원리 */}
       <SectionTitle
